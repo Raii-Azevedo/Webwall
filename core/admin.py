@@ -4,5 +4,5 @@ from .models import Ciclo
 
 @admin.register(Ciclo)
 class CicloAdmin(admin.ModelAdmin):
-    list_display = ('titulo', "url", 'indicador', 'criacao', 'atualizacao', 'ativo')
+    list_display = ('criacao', 'atualizacao', 'data_atual', 'tipo_kmep_id', 'tkm_d', 'parada_d','kmep_d','tkm_acum','parada_acum', 'kmep_acum')
 

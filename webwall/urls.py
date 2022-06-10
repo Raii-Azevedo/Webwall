@@ -16,8 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-    path('api/v1/', include('core.urls')),
-    path('admin/', admin.site.urls),
+from rest_framework import routers
+from core.views import CicloViewSet
+
+router = routers.SimpleRouter()
+router.register('ciclos', CicloViewSet)
+
+urlpatterns = router.urls
+
+urlpatterns += [
     path('auth/', include('rest_framework.urls')),
+    path('admin/', admin.site.urls),
 ]
